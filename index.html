@@ -348,6 +348,35 @@
         }
 
         @media (max-width: 480px) {
+            .value-row {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+                gap: 8px;
+            }
+
+            .value-row .value {
+                flex: 0 1 auto;
+                width: auto !important;
+                min-width: 0;
+                overflow-wrap: anywhere;
+            }
+
+            .value-row .copy {
+                flex: 0 0 auto;
+                margin-left: 0;
+                align-self: center;
+            }
+
+            .value-row .iban {
+                flex: 1 1 auto;
+                font-size: 12px;
+                letter-spacing: 0;
+                overflow-wrap: anywhere;
+                word-break: break-all;
+            }
+
             body {
                 padding:
                     max(14px, env(safe-area-inset-top))
@@ -441,6 +470,19 @@
         }
 
         @media (max-width: 360px) {
+            .value-row {
+                gap: 6px;
+            }
+
+            .value-row .copy {
+                padding: 8px 7px;
+                font-size: 10px;
+            }
+
+            .value-row .iban {
+                font-size: 11px;
+            }
+
             main {
                 padding: 20px 12px;
                 border-radius: 19px;
