@@ -36,11 +36,7 @@
             padding: 28px 16px;
             min-height: 100vh;
             background:
-                radial-gradient(
-                    ellipse at top,
-                    #ffe8ee 0%,
-                    transparent 45%
-                ),
+                radial-gradient(ellipse at top, #ffe8ee 0%, transparent 45%),
                 var(--background);
             color: var(--text);
             font-family: -apple-system, BlinkMacSystemFont,
@@ -127,18 +123,18 @@
             font-weight: 600;
         }
 
-        /* Текст и кнопка располагаются рядом */
+        /* Текст слева, кнопка справа */
         .value-row {
             display: flex;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: space-between;
             flex-wrap: nowrap;
-            gap: 10px;
+            gap: 8px;
             min-width: 0;
         }
 
-        .value {
-            flex: 0 1 auto;
+        .value-row .value {
+            flex: 1 1 auto;
             min-width: 0;
             margin: 0;
             font-size: 15px;
@@ -147,19 +143,21 @@
             overflow-wrap: anywhere;
         }
 
+        .value-row .copy {
+            flex: 0 0 auto;
+            margin-left: auto;
+            align-self: center;
+        }
+
         .iban {
-            flex: 0 1 auto;
-            min-width: 0;
             font-size: 14px;
             letter-spacing: 0;
             overflow-wrap: anywhere;
-            word-break: break-word;
+            word-break: break-all;
             font-variant-numeric: tabular-nums;
         }
 
         .copy {
-            flex: 0 0 auto;
-            margin: 0;
             padding: 8px 10px;
             border: 0;
             border-radius: 10px;
@@ -281,7 +279,7 @@
             outline-offset: 3px;
         }
 
-        /* Телефоны */
+        /* Мобильная версия */
         @media (max-width: 480px) {
             body {
                 padding:
@@ -330,29 +328,22 @@
                 padding: 14px 12px;
             }
 
-            /* Одинаковый промежуток между текстом и кнопкой */
             .value-row {
                 gap: 8px;
             }
 
             .value-row .value {
-                flex: 0 1 auto;
-                width: auto;
                 font-size: 13px;
             }
 
             .value-row .copy {
-                flex-shrink: 0;
-                padding: 9px 9px;
+                padding: 9px;
                 font-size: 11px;
             }
 
             .value-row .iban {
-                flex: 1 1 auto;
-                font-size: 11px;
+                font-size: 10px;
                 line-height: 1.5;
-                overflow-wrap: anywhere;
-                word-break: break-all;
             }
 
             .comment {
@@ -381,7 +372,7 @@
             }
         }
 
-        /* Очень узкие экраны */
+        /* Маленькие телефоны */
         @media (max-width: 360px) {
             main {
                 padding: 20px 12px;
@@ -393,20 +384,20 @@
             }
 
             .value-row {
-                gap: 7px;
+                gap: 6px;
             }
 
             .value-row .value {
                 font-size: 12px;
             }
 
-            .value-row .iban {
-                font-size: 10px;
-            }
-
             .value-row .copy {
                 padding: 8px 7px;
                 font-size: 10px;
+            }
+
+            .value-row .iban {
+                font-size: 9px;
             }
 
             .button {
@@ -448,7 +439,6 @@
         <p class="section-title">РЕКВІЗИТИ ОТРИМУВАЧА</p>
 
         <section class="details" aria-label="Реквізити для оплати">
-
             <div class="detail">
                 <p class="label">IBAN · Рахунок отримувача</p>
 
@@ -461,7 +451,6 @@
                         class="copy"
                         type="button"
                         data-copy="iban"
-                        aria-label="Копіювати IBAN"
                     >Копіювати</button>
                 </div>
             </div>
@@ -478,7 +467,6 @@
                         class="copy"
                         type="button"
                         data-copy="receiver"
-                        aria-label="Копіювати отримувача"
                     >Копіювати</button>
                 </div>
             </div>
@@ -493,11 +481,9 @@
                         class="copy"
                         type="button"
                         data-copy="taxid"
-                        aria-label="Копіювати ІПН"
                     >Копіювати</button>
                 </div>
             </div>
-
         </section>
 
         <div class="comment">
