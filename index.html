@@ -5,11 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f8f5f6">
-<link
-    rel="icon"
-    type="image/jpeg"
-    href="https://raw.githubusercontent.com/176ret/test/main/logo.jpg"
->    <title>Оплата на ФОП | POSTER LOVE</title>
+    <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/176ret/test/main/logo.jpg">
+    <title>Оплата на ФОП | POSTER LOVE</title>
 
     <style>
         * {
@@ -128,7 +125,6 @@
             font-size: 15px;
             line-height: 1.55;
             font-weight: 700;
-            overflow-wrap: anywhere;
         }
 
         .iban {
@@ -315,7 +311,13 @@
 
             <div class="detail">
                 <p class="label">Отримувач</p>
-                <p class="value">ФОП Шильніковська Каріна</p>
+                <div class="value-row">
+                   <p class="value ">ФОП  </p> <p class="value receiver" style="width: 100%;" id="receiver"> Шильніковська Каріна</p>
+                    <button class="copy" type="button" data-copy="receiver"
+                        aria-label="Копіювати Отримувач">Копіювати</button>
+
+                </div>
+
             </div>
 
             <div class="detail">
